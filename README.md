@@ -7,6 +7,10 @@ In addition, it uses the AI Foundry Library that build on Data Foundry functiona
 The library: https://github.com/jortwi/AI-Foundry-Library
 Data Foundry: https://data.id.tue.nl/
 
+# How to use
+
+Download these files, and change the `api_token` in the .html file to your Data Foundry API key, which can be generated in the project settings of any Data Foundry project.
+
 # Functions
 
 Different reusable functions are used:
