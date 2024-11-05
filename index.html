@@ -48,7 +48,7 @@
             <section id="userResponse">
                 <div role="group">
                     <input id="userInput" type="text" placeholder="start typing here" onkeydown="checkEnter(event)" />
-                    <button type="submit" class="pico-background-pumpkin-350" onclick="sendMessage()">
+                    <button id="btn-send" type="submit" class="pico-background-pumpkin-350" onclick="sendMessage()">
                         send
                     </button>
                 </div>
@@ -82,7 +82,7 @@
 
     <script>
         //Replace this with your own Data Foundry API Key
-        api_token = 'df-abc123....='
+        api_token = 'df-abc123...='
 
         //array that will be used to provide context of the conversation to AI
         let messageHistory = []
@@ -115,7 +115,7 @@
                 //Show the buttons to give three options
                 document.querySelector('#branches').style.display = 'block'
             } else if (questionNr === 4 || questionNr === 5) {
-                let response = await foundry.textToText({ api_token: api_token, prompt: `Message History: ${JSON.stringify(messageHistory)}. Provide the next message. Keep it short.` })
+                let response = await foundry.textToText({ api_token: api_token, loadingElementSelector: '#btn-send', prompt: `Message History: ${JSON.stringify(messageHistory)}. Provide the next message. Keep it short.` })
                 addMessage("assistant", response)
             } else if (questionNr === 6) {
                 addMessage("assistant", "All right. Thank you for this conversation!")
